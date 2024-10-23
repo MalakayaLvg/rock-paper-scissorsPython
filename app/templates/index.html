@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pierre-Feuille-Ciseaux</title>
+</head>
+<body>
+    <h1>Jeu Pierre-Feuille-Ciseaux</h1>
+    <form action="/jouer" method="POST">
+        <label for="choix">Choisissez :</label>
+        <select name="choix" id="choix">
+            <option value="pierre">Pierre</option>
+            <option value="feuille">Feuille</option>
+            <option value="ciseaux">Ciseaux</option>
+        </select>
+        <button type="submit">Jouer</button>
+    </form>
+
+    {% if resultat %}
+    <h2>Résultat :</h2>
+    <p>Vous avez choisi : {{ joueur }}</p>
+    <p>L'ordinateur a choisi : {{ ordinateur }}</p>
+    <p><strong>{{ resultat }}</strong></p>
+    {% endif %}
+</body>
+</html>
